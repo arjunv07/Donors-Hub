@@ -1,0 +1,27 @@
+{
+  "name": "donorshub",
+  "version": "1.0.0",
+  "description": "An Opensource project for Blood Donation where a person or an organization can signup for donating blood and the recipient can easily contact and request for blood.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arjunv07/Donors-Hub.git"
+  },
+  "author": "Arjun V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arjunv07/Donors-Hub/issues"
+  },
+  "homepage": "https://github.com/arjunv07/Donors-Hub#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-sanitizer": "^1.0.2",
+    "method-override": "^2.3.10",
+    "mongoose": "^4.12.3"
+  }
+}
