@@ -32,6 +32,10 @@ app.get("/about", function (req, res) {
     res.render("about");
 });
 
+app.get("/whocanhelp", function (req, res) {
+    res.render("help");
+});
+
 // Server Configuration
 app.listen("3000", function(){
   console.log("Server Running!!");
