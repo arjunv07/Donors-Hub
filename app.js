@@ -14,6 +14,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
+// TODO: 
 /*var donorSchema = new mongoose.Schema({
     name: String,
     mobile: String,
@@ -34,6 +35,26 @@ app.get("/about", function (req, res) {
 
 app.get("/whocanhelp", function (req, res) {
     res.render("help");
+});
+
+app.get("/fact", function (req, res) {
+    res.render("did_you_know");
+});
+
+app.get("/donation-type", function (req, res) {
+    res.render("donation_type");
+});
+
+app.get("/ethnic-group", function(req, res){
+    res.render("ethnic_group");
+});
+
+app.get("/tips", function (req, res) {
+    res.render("tips");
+});
+
+app.get("/gallery", function (req, res) {
+    res.render("gallery");
 });
 
 // Server Configuration
