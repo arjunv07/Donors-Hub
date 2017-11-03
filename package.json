@@ -23,6 +23,7 @@
     "express": "^4.16.2",
     "express-sanitizer": "^1.0.2",
     "method-override": "^2.3.10",
-    "mongoose": "^4.12.3"
+    "mongoose": "^4.12.3",
+    "tslint": "^5.8.0"
   }
 }
