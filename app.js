@@ -22,7 +22,13 @@ app.use(methodOverride("_method"));
     // Index page...(Static)
 // ****************************************************************    
 app.get("/", function(req, res){
-    res.render("static/index");
+    // if(err){
+    //     console.log("error");
+    // }
+    // else{
+        res.render("static/index");
+    // }
+   
 });
 
 // ****************************************************************
@@ -97,7 +103,7 @@ app.get("/requests", function(req, res){
 // ****************************************************************
 app.get("*", function (req, res) {
     res.send("Sorry page not available!! Please check your URL");
-    res.render("static/404-page");
+    // res.render("static/404-page");
     // TODO: 404-PAGE RENDERING
 });
 
