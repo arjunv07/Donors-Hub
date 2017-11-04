@@ -6,6 +6,8 @@ var express = require("express"),
     mongoose = require("mongoose"),
     methodOverride = require("method-override"),
     expressSanitizer = require("express-sanitizer"),
+    Recepient = require("./models/recepient"),
+    Donor = require("./models/donor"),
     app = express();
 
 // ****************************************************************
@@ -22,13 +24,7 @@ app.use(methodOverride("_method"));
     // Index page...(Static)
 // ****************************************************************    
 app.get("/", function(req, res){
-    // if(err){
-    //     console.log("error");
-    // }
-    // else{
-        res.render("static/index");
-    // }
-   
+    res.render("static/index");   
 });
 
 // ****************************************************************
@@ -91,14 +87,80 @@ app.get("/admin", function(req, res){
 // ****************************************************************
     // Request Page... (Dynamic) 
 // ****************************************************************
-// TODO: request page
-app.get("/requests", function(req, res){
-    res.send("Request page");
+app.get("/donor", function(req, res){
+    Donor.find({}, function(err, alldonors){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("donor/index", {donors: alldonors});
+        }
+    });
 });
 
-// TODO: Available people
-app.post("/requests", function(req, res){
-    res.send("Requested peoples list");
+// ****************************************************************
+// Donor's Details...(Dynamic)
+// ****************************************************************
+app.post("/donor", function(req, res){
+    var name = req.body.name;
+    var email = req.body.email;
+    var password = req.body.password;
+    var mobile = req.body.mobile;
+    var age = req.body.age;
+    var gender = req.body.gender;
+    var bloodgroup = req.body.bloodgroup;
+    var available = req.body.available;
+    var newDonor = {name: name, email: email, password: password, mobile: mobile, age: age, gender: gender, bloodgroup: bloodgroup, available: available};
+    // console.log(name + email + password + mobile + age + gender + bloodgroup + available);
+    Donor.create(newDonor, function(err, pushed){
+        if(err){
+            console.log(err);
+        }
+        else{
+            res.redirect(301, "/donor");
+        }
+    });
+});
+// ****************************************************************
+// Form for adding Donor's Detail
+// ****************************************************************
+app.get("/new", function (req, res) {
+    res.render("donor/new");
+});
+
+// ****************************************************************
+// For request Page...(Dynamic)
+// ****************************************************************
+app.get("/recepient", function(req, res){
+    Recepient.find({}, function (err, allrecepient) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("recepient/index", { recepients: allrecepient })
+        }
+    });
+});
+
+app.post("/recepient", function(req, res){
+    var name = req.body.name;
+    var email = req.body.email;
+    var mobile = req.body.mobile;
+    var bloodgroup = req.body.bloodgroup;
+    var age = req.body.age;
+    var gender = req.body.gender;
+    var place = req.body.place;
+    var time = req.body.time;
+    var newRecepient = {name: name, email: email, mobile: mobile, bloodgroup: bloodgroup, age: age, gender: gender, place: place, time: time}
+    Recepient.create(newRecepient, function(err, pushed){
+        if(err){
+            console.log(err);
+        }else{
+            res.redirect(301, "/recepient");
+        }
+    });
+});
+// TODO: Added route to index page
+app.post("/newr", function(req, res){
+    res.render("recepient/new");
 });
 
 // ****************************************************************
