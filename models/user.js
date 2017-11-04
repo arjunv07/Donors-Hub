@@ -1,10 +1,17 @@
 // ****************************************************************
     // MongoDb Schema
 // ****************************************************************    
-// TODO: 
-var donorSchema = new mongoose.Schema({
+var mongoose = require("mongoose");
+
+var donorSchema =   mongoose.Schema({
     name: String,
+    email: String,
+    password: String,
     mobile: String,
+    age: String,    
     gender: String,
+    bloodgroup: String,    
+    available: String
 });
- //TODO : Complete schema
+
+mosule.exports = mongoose.model("Donor", donorSchema);
