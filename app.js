@@ -97,6 +97,9 @@ app.get("/requests", function(req, res){
 });
 
 // TODO: Available people
+app.post("/requests", function(req, res){
+    res.send("Requested peoples list");
+});
 
 // ****************************************************************
     // For unavailable URL requests
