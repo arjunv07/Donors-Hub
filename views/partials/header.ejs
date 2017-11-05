@@ -2,6 +2,8 @@
     <html>
         <head>
             <title>Donors Hub </title>
+               
+                <link rel="icon" type="image/png" sizes="16x16" href="images/blood.png">
                 <meta charset="utf-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
                 <link href="stylesheets/layout.css" rel="stylesheet" type="text/css">
@@ -47,8 +49,34 @@
                                 <nav id="mainav" class="fl_right">
                                     <ul class="clear">
                                         <li><a href="/">Home</a></li>
-                                        <li><a href="/recepient">Recepient</i></a></li>
-                                        <li><a href="/donor">Donors</a></li>
+                                        <li><a class="drop active">Recepient</i></a>
+                                        <ul>
+                                            <li>
+                                                <a href="recepient/show">Login</a>
+                                            </li>
+                                            <li>
+                                                <a href="/newr">Sign-Up</a>
+                                            </li>
+                                            <li>
+                                                <a href="/recepient">Available</a>
+                                            </li>
+                                            </li>
+                                        </ul>
+                                        <li>
+                                            <a class="drop active">Donor</i>
+                                            </a>
+                                            <ul>
+                                                <li>
+                                                    <a href="donor/show">Login</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/new">Sign-Up</a>
+                                                </li>
+                                                <li>
+                                                    <a href="/donor">Available</a>
+                                                </li>
+                                        </li>
+                                        </ul>
                                         <li><a href="/about">About</a></li>
 
                                         <li><a class="drop active">Info</a>
@@ -63,7 +91,7 @@
                                         </li>
 
                                         
-                                        <li><a href="/new">Sign-Up</i>
+                                        <li><a href="#">Login</i>
                                             </a></li>
                                     </ul>
                                 </nav>

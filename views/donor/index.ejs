@@ -1,5 +1,10 @@
-<% include ./partials/header %>
+<% include ../partials/header %>
 
+<style>
+    .container {
+        color: black;
+    }
+</style>
 <div class="container">
     <header class="jumbotron">
         <div class="container">
@@ -10,17 +15,24 @@
             </p>
         </div>
     </header>
+    <p>
     <div class="row text-center" style="display: flex; flex: wrap;">
         <% donors.forEach(function(donors){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <img src="<%= donors.bloodgroup %>">
+                    
                     <div class="caption">
                         <h4>
                             <strong>
-                                <%= donors.name %>
+                                <%= donors.bloodgroup %>
                             </strong>
                         </h4>
+                        <h5>
+                            <p><strong>Name:</strong> <%= donors.name %></p>
+                            <p><strong>Available: </strong>
+                                <%= donors.available %>
+                            </p>
+                        </h5>
                     </div>
                     <p>
                     </p>
@@ -29,6 +41,7 @@
             </div>
             <% }); %>
     </div>
+    </p>
 </div>
 
-<% include ./partials/footer %>
+<% include ../partials/footer %>

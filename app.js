@@ -120,12 +120,23 @@ app.post("/donor", function(req, res){
         }
     });
 });
+app.get("/donor/show", function (req, res) {
+    // Donor.findById(req.params.id).populate("donors").exec(function(err, founddonor){
+    //     if(err){
+    //         console.log(err);
+    //     }
+    //     else{
+    res.render("donor/show");//, {donor: founddonor});
+    // }
+    // });
+});
 // ****************************************************************
 // Form for adding Donor's Detail
 // ****************************************************************
 app.get("/new", function (req, res) {
     res.render("donor/new");
 });
+
 
 // ****************************************************************
 // For request Page...(Dynamic)
@@ -158,10 +169,24 @@ app.post("/recepient", function(req, res){
         }
     });
 });
-// TODO: Added route to index page
-app.post("/newr", function(req, res){
+
+app.get("/newr", function(req, res){
     res.render("recepient/new");
 });
+
+// app.get("/recepient/:id", function () {
+//     Donor.findById(req.params.id).populate("recepients").exec(function (err, foundrecepient) {
+//         if (err) {
+//             console.log(err);
+//         } else {
+//             res.render("recepient/show", {recepient : foundrecepient});
+//         }
+//     });
+// });
+
+// app.get("/login", function(req, res){
+    
+// });
 
 // ****************************************************************
     // For unavailable URL requests

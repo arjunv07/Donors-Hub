@@ -1,6 +1,11 @@
 <% include ../partials/header %>
 
-    <div class="container">
+    <style>
+        .container{
+            color: black;
+        }
+    </style>
+    <div class="container" >
         <header class="jumbotron">
             <div class="container">
                 <h1> Recepient List </h1>
@@ -14,13 +19,19 @@
             <% recepients.forEach(function(recepients){ %>
                 <div class="col-md-3 col-sm-6">
                     <div class="thumbnail">
-                        <img src="<%= recepients.bloodgroup %>">
+                        <img src="">
                         <div class="caption">
                             <h4>
                                 <strong>
-                                    <%= recepients.name %>
+                                    <%= recepients.bloodgroup %>
                                 </strong>
                             </h4>
+                            <h5>
+                                <p>
+                                    <strong> <%= recepients.name %></strong>
+                                </p>
+                                <p><%= recepients.time %></p>
+                            </h5>
                         </div>
                         <p>
                         </p>
